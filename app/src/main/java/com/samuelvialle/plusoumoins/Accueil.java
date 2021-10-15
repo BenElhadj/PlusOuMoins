@@ -15,8 +15,6 @@ public class Accueil extends AppCompatActivity {
     /**2 Méthode init() **/
     public void init(){
         btnPlusOuMoins = findViewById(R.id.btnPlusOuMoins);
-
-
     }
 
 
@@ -39,6 +37,5 @@ public class Accueil extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }

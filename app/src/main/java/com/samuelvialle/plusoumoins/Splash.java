@@ -16,14 +16,24 @@ ImageView ivLoading;
 
         ImageView imageView = findViewById(R.id.ivLoading);
 
-        imageView.animate().alpha(1).rotation(3600).setDuration(2000);
-        imageView.animate().alpha(2).translationY(-1000).setDuration(5000);
-        imageView.setOnClickListener(new View.OnClickListener() {
+        imageView.animate()
+                .alpha(1)
+                .rotation(3600)
+                .setDuration(2000)
+                .translationY(-1400)
+                .setDuration(3000)
+                .withEndAction(new Runnable() {
             @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(Splash.this,Accueil.class);
-                startActivity(intent);
+            public void run() {
+                imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent=new Intent(Splash.this,Accueil.class);
+                        startActivity(intent);
+                    }
+                });
             }
         });
+
     }
 }
